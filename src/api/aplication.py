@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from src.api.configuracao import configure_db, configure_rutes
+from src.api.routes import home
 
 ''' Iniciando app '''
 def creat_app():
@@ -8,6 +9,8 @@ def creat_app():
 
     configure_db(app)
     configure_rutes(app)
+ 
+
 
     return app
 

@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
 from src.api.routes import users
+from src.api.routes import home
+
 
 '''Todas as função recebem app para poderem se incluidas ao app'''
 
@@ -8,6 +10,8 @@ from src.api.routes import users
 def configure_rutes(app: FastAPI):
     '''def onde sera criada as rotas'''
     app.include_router(users.router)
+    app.include_router(home.router)
+
 
 
 def configure_db(app: FastAPI):
