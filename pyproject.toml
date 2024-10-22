@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "rede social"
+version = "1.0"
+description = ""
+authors = ["Gilderlan silva da cruz"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = {extras = ["standard"], version = "^0.115.2"}
+tortoise-orm = "^0.21.7"
+
+[tool.taskipy.tasks]
+dev = "fastapi dev dev.py"
+prod = "uvicorn src.api.aplication:app --host 0.0.0.0 --port 8000 --reload"
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
